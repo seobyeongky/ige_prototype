@@ -118,7 +118,7 @@ var IgeNode = IgeClass.extend({
 		for (i = 0; i < arrCount; i++) {
 			item = arr[i];
 
-			if (!this.fs.existsSync(this._gamePath + item.path + '.js')) {
+			if (!this.fs.existsSync(this._gamePath + item.path + '.js') && !this.fs.existsSync(this._gamePath + item.path + '.coffee')) {
 				// The module file is missing, throw an error!
 				this.log('Cannot load module from: "' + this._gamePath + item.path + '.js", exiting!', 'warning');
 				setTimeout(this.exitProcess, 50);
